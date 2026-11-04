@@ -4,7 +4,7 @@
 export const headline = "Data Analyst | Data Scientist | Data Engineer";
 
 export const proofPoints = [
-  { value: "4+", label: "years in data roles" },
+  { value: "5+", label: "years in data roles" },
   { value: "15-20%", label: "better pricing precision for clients" },
   { value: "10+", label: "international studies supported" },
   { value: "18+", label: "peer-reviewed tutorials" },
