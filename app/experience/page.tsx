@@ -1,62 +1,14 @@
+import type { Metadata } from "next";
+import { ArrowUpRight, Download } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import { certifications, education, experiences, publication, resumes } from "@/app/lib/portfolio";
 
-const experiences = [
-  {
-    company: "Syno International",
-    context: "Market research and analytics",
-    role: "Data Scientist",
-    period: "Jul 2025 - Present",
-    bullets: [
-      "Build Python, SQL, and AWS-based ETL pipelines for ingestion, validation, transformation, and downstream analytics.",
-      "Apply statistical and ML methods including Gabor-Granger, CVI/CBI, brand perception modeling, and key driver analysis.",
-      "Develop Streamlit and LangChain-powered internal tools that reduce manual operations work and accelerate insight delivery.",
-      "Document pipeline architecture, orchestration dependencies, and implementation decisions for review and knowledge transfer.",
-    ],
-  },
-  {
-    company: "Syno International",
-    context: "Brand tracking and insight delivery",
-    role: "Data Analyst",
-    period: "Sep 2024 - Jun 2025",
-    bullets: [
-      "Built and maintained Power BI dashboards connected to SQL workflows for global client reporting.",
-      "Delivered MaxDiff and Van Westendorp pricing analysis, mood score modeling, SWOT analysis, and brand equity work.",
-      "Wrote SQL logic for CVI/CBI modeling and campaign analysis, supporting high-accuracy client deliverables.",
-      "Translated business requirements into analysis outputs, documentation, and stakeholder-ready recommendations.",
-    ],
-  },
-  {
-    company: "DataCamp",
-    context: "Technical education",
-    role: "Technical Writer",
-    period: "Apr 2024 - Jul 2025",
-    bullets: [
-      "Published 18+ peer-reviewed tutorials and explainers on Python, SQL, pandas, statistics, Excel, and data science concepts.",
-      "Collaborated with editors and subject-matter experts to improve technical accuracy, clarity, and teaching value.",
-    ],
-  },
-  {
-    company: "GOMYCODE",
-    context: "Data science instruction",
-    role: "Data Science Instructor",
-    period: "Aug 2023 - Feb 2024",
-    bullets: [
-      "Taught and mentored 40+ students across Python, SQL, data analysis, visualization, machine learning, and statistical modeling.",
-      "Led hands-on projects that helped learners build end-to-end data solutions and explain outputs to non-technical audiences.",
-    ],
-  },
-  {
-    company: "Freelance",
-    context: "Energy, finance, and edtech clients",
-    role: "Business Intelligence Specialist / Data Scientist",
-    period: "Nov 2020 - Aug 2024",
-    bullets: [
-      "Designed data solutions, Power BI dashboards, and automated ETL workflows using SSIS, SQL, and reporting tools.",
-      "Created client-facing documentation and how-to guides that improved analytics adoption and project turnaround.",
-    ],
-  },
-];
+export const metadata: Metadata = {
+  title: "Experience | Samuel Shaibu",
+  description:
+    "Samuel Shaibu's experience as a data scientist and data analyst at Syno International, technical writer at DataCamp, instructor at GOMYCODE and freelance BI specialist.",
+};
 
 export default function ExperiencePage() {
   return (
@@ -68,12 +20,21 @@ export default function ExperiencePage() {
           <div className="container-max px-4 sm:px-6">
             <div className="kicker">Experience</div>
             <h1 className="section-title mt-5 max-w-5xl">
-              Data work across engineering, modeling, analytics, and education.
+              Data work across analysis, statistics, engineering and teaching.
             </h1>
             <p className="subhead mt-6 max-w-3xl">
-              Selected roles that show how I move between building the data
-              foundation, analyzing the problem, and communicating the answer.
+              Every role, with more detail than fits on a two-page resume. For the stories behind
+              the bullets, see the case studies.
             </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {resumes.map((item) => (
+                <a key={item.role} href={item.file} download className="button-secondary">
+                  <Download className="h-4 w-4" />
+                  {item.role} resume
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -84,15 +45,13 @@ export default function ExperiencePage() {
                 <article key={`${item.company}-${item.role}`} className="card p-7">
                   <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                     <div>
-                      <h2 className="text-2xl font-bold text-white">{item.company}</h2>
+                      <h2 className="text-2xl font-bold text-white">{item.role}</h2>
                       <p className="mt-2 text-sm font-medium text-[var(--muted)]">
-                        {item.role} | {item.context}
+                        {item.company} | {item.context}
                       </p>
                     </div>
 
-                    <span className="text-sm font-bold text-[var(--teal)]">
-                      {item.period}
-                    </span>
+                    <span className="text-sm font-bold text-[var(--teal)]">{item.period}</span>
                   </div>
 
                   <ul className="mt-6 grid gap-3 md:grid-cols-2">
@@ -107,6 +66,63 @@ export default function ExperiencePage() {
                   </ul>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-pad border-t border-white/10">
+          <div className="container-max grid gap-10 px-4 sm:px-6 lg:grid-cols-3">
+            <div>
+              <div className="kicker">Education</div>
+              <div className="mt-6 space-y-4">
+                {education.map((item) => (
+                  <article key={item.school} className="card-muted p-5">
+                    <h3 className="text-lg font-bold text-white">{item.school}</h3>
+                    <p className="mt-1 text-sm text-[var(--muted-strong)]">{item.detail}</p>
+                    <p className="mt-1 text-xs font-bold text-[var(--teal)]">{item.period}</p>
+                    {item.note ? <p className="copy mt-3 text-sm">{item.note}</p> : null}
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="kicker">Certifications</div>
+              <div className="mt-6 space-y-4">
+                {certifications.map((item) => (
+                  <article key={item.title} className="card-muted p-5">
+                    <p className="text-sm leading-6 text-[var(--muted-strong)]">{item.title}</p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-[var(--teal)] hover:text-white"
+                      >
+                        View certificate
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="kicker">Publication</div>
+              <article className="card-muted mt-6 p-5">
+                <p className="text-sm font-semibold leading-6 text-white">{publication.title}</p>
+                <p className="copy mt-2 text-sm">{publication.venue}</p>
+                <a
+                  href={publication.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-[var(--teal)] hover:text-white"
+                >
+                  View publication
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </article>
             </div>
           </div>
         </section>

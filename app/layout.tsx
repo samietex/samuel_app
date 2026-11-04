@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Samuel Shaibu | Data Scientist, Data Engineer, and Technical Writer",
+  title: "Samuel Shaibu | Data Analyst, Data Scientist and Data Engineer",
   description:
-    "Portfolio of Samuel Shaibu, a data scientist, data engineer, and technical writer working across Python, SQL, ETL, machine learning, Power BI, and practical data education.",
+    "Portfolio of Samuel Shaibu, a data analyst, data scientist and data engineer in Vilnius: statistical testing, Power BI dashboards, AWS pipelines and machine learning, with case studies and downloadable resumes.",
 };
 
 export default function RootLayout({

@@ -1,31 +1,7 @@
-import { BrainCircuit, DatabaseZap, PenLine } from "lucide-react";
+import { BarChart3, BrainCircuit, DatabaseZap, PenLine } from "lucide-react";
+import { pillars } from "@/app/lib/portfolio";
 
-const pillars = [
-  {
-    title: "Data Engineering",
-    icon: DatabaseZap,
-    summary:
-      "I design pipelines that move, validate, transform, and serve data reliably for analytics and operations.",
-    items: ["ETL pipelines", "Data validation", "AWS Glue", "S3 + Athena", "Step Functions", "Terraform"],
-    accent: "text-[var(--teal)]",
-  },
-  {
-    title: "Data Science",
-    icon: BrainCircuit,
-    summary:
-      "I use statistical modeling and machine learning to answer business questions and make trade-offs visible.",
-    items: ["Machine learning", "Pricing analysis", "Experimentation", "Forecasting", "Model evaluation", "Responsible AI"],
-    accent: "text-[var(--blue)]",
-  },
-  {
-    title: "Technical Writing",
-    icon: PenLine,
-    summary:
-      "I turn technical systems into tutorials, documentation, and explanations people can actually use.",
-    items: ["DataCamp tutorials", "API-style docs", "Newsletter writing", "Model cards", "Guides", "Developer education"],
-    accent: "text-[var(--amber)]",
-  },
-];
+const icons = { chart: BarChart3, brain: BrainCircuit, database: DatabaseZap, pen: PenLine };
 
 export default function About() {
   return (
@@ -33,17 +9,16 @@ export default function About() {
       <div className="container-max px-4 sm:px-6">
         <div className="max-w-3xl">
           <div className="kicker">What I do</div>
-          <h2 className="section-title mt-5">Three disciplines, one workflow.</h2>
+          <h2 className="section-title mt-5">From raw data to the decision.</h2>
           <p className="subhead mt-5">
-            My best work happens where data engineering, data science, and
-            communication overlap: build the system, analyze the signal, explain
-            the result.
+            I own the whole path: build the pipeline, define the KPI, test whether a change is
+            real, put it in a dashboard people can use, and explain what it means.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {pillars.map((pillar) => {
-            const Icon = pillar.icon;
+            const Icon = icons[pillar.icon as keyof typeof icons];
 
             return (
               <article key={pillar.title} className="card p-6">

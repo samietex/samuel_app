@@ -1,11 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
 const strengths = [
-  "I build Python and SQL data workflows that clean, validate, transform, and serve data for reporting and analytics.",
-  "I apply statistical and ML methods to pricing, perception, brand tracking, and responsible AI problems.",
-  "I write tutorials, documentation, newsletters, and stakeholder-facing explanations that make technical work easier to use.",
+  "I find out why a number looks wrong before it reaches anyone, and I'd rather report an honest 67% than a flattering 82%.",
+  "I test whether a change is real before anyone acts on it: significance tests, confidence intervals and careful comparisons.",
+  "I build the whole path myself, from the pipeline to the dashboard, so I know exactly where every number comes from.",
 ];
 
 export default function AboutPage() {
@@ -28,50 +30,58 @@ export default function AboutPage() {
                   />
                 </div>
                 <p className="copy mt-4 text-sm">
-                  Samuel Shaibu. Data engineer, data scientist, and technical
-                  writer based in Vilnius.
+                  Samuel Shaibu. Data analyst, data scientist and data engineer based in Vilnius,
+                  Lithuania.
                 </p>
               </div>
 
               <div>
                 <div className="kicker">About</div>
                 <h1 className="section-title mt-5">
-                  I build data systems and explain the decisions behind them.
+                  I turn raw data into decisions, and I explain the reasoning behind them.
                 </h1>
 
                 <div className="mt-8 space-y-6 text-base leading-8 text-[var(--muted-strong)]">
                   <p>
-                    I am a data professional with 4+ years of experience across
-                    data science, data engineering, analytics, business
-                    intelligence, and technical education. I currently work on
-                    ETL workflows, AI-assisted tools, cloud data pipelines,
-                    dashboards, and statistical models at Syno International.
+                    I&apos;m a data scientist at Syno International, where I&apos;ve worked since 2024,
+                    first as a data analyst. My work runs end to end: I build the pipelines that
+                    bring survey data in, define the KPIs, test whether changes are real, and
+                    build the Power BI dashboards that international clients use to make decisions
+                    about their brands, prices and advertising.
                   </p>
 
                   <p>
-                    My background is intentionally hybrid. I can write Python and
-                    SQL to make data reliable, use statistical and ML methods to
-                    answer business questions, and explain the result clearly to
-                    technical and non-technical audiences.
+                    My route into data wasn&apos;t a straight line. I studied mechanical engineering
+                    at the University of Ibadan and wrote my thesis on machine learning for energy
+                    grids, which later became a co-authored review paper in Renewable and
+                    Sustainable Energy Reviews. I&apos;ve done freelance BI and data science work since
+                    2020 for clients in energy and edtech.
                   </p>
 
                   <p>
-                    Outside industry work, I publish technical content on
-                    DataCamp, Medium, and Substack. I have taught data science
-                    students, mentored project work, and co-authored a
-                    peer-reviewed review paper on machine learning for energy
-                    grid efficiency.
+                    I&apos;ve also spent a lot of time explaining data to people who don&apos;t build it. I
+                    taught more than 40 students in Lagos, wrote over 18 peer-reviewed tutorials for
+                    DataCamp, and I write about SQL, Python and data engineering on Medium and
+                    Substack, including a free SQL course for people starting out.
                   </p>
                 </div>
 
                 <div className="mt-10 grid gap-4 md:grid-cols-3">
                   {strengths.map((strength) => (
                     <div key={strength} className="card-muted p-5">
-                      <p className="text-sm leading-6 text-[var(--muted-strong)]">
-                        {strength}
-                      </p>
+                      <p className="text-sm leading-6 text-[var(--muted-strong)]">{strength}</p>
                     </div>
                   ))}
+                </div>
+
+                <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                  <Link href="/work" className="button-primary">
+                    Read the case studies
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link href="/#resume" className="button-secondary">
+                    Download a resume
+                  </Link>
                 </div>
               </div>
             </div>

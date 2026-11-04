@@ -1,52 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
-
-const projects = [
-  {
-    title: "AWS Survey & Ad-Awareness ETL Pipeline",
-    label: "Data Engineering",
-    problem:
-      "Survey and ad-awareness data needed repeatable ingestion, transformation, validation, and query-ready outputs.",
-    solution:
-      "Built a Terraform-managed AWS workflow with Glue, S3, Athena, IAM, EventBridge Scheduler, and Step Functions.",
-    impact:
-      "Created an automated, reviewable pipeline across bronze and silver layers with documented resource flow and data checks.",
-    stack: ["Python", "AWS Glue", "S3", "Athena", "Step Functions", "Terraform"],
-  },
-  {
-    title: "Legacy Integration Pipeline Modernization",
-    label: "Python Engineering",
-    problem:
-      "A large legacy integration workflow created operational friction and required too much manual handling.",
-    solution:
-      "Modernized the Python codebase, added multi-format ingestion, SFTP/FTPS handling, S3 delivery, logging, and monitoring.",
-    impact:
-      "Reduced manual operations workload by about 40% and improved consistency for downstream reporting datasets.",
-    stack: ["Python", "SQL", "pandas", "SFTP", "AWS S3", "pytest"],
-  },
-  {
-    title: "AI Ethics Personalized Budget Predictor",
-    label: "Responsible AI",
-    problem:
-      "A recommender-style model needed transparency around bias, fairness trade-offs, and threshold decisions.",
-    solution:
-      "Built a reproducible scikit-learn pipeline with MLflow tracking, fairness metrics, reweighing, threshold sweeps, and a Streamlit app.",
-    impact:
-      "Produced governance-ready artifacts including a model card, data sheet, risk assessment, and trade-off summary.",
-    stack: ["Python", "Scikit-learn", "MLflow", "Streamlit", "Fairness metrics"],
-    href: "https://github.com/samietex/AI_Ethics_Personalized_Budget_Prediction_Model",
-  },
-  {
-    title: "Brand Tracking & Pricing Analytics",
-    label: "Data Science",
-    problem:
-      "Global brand teams needed clearer pricing, perception, and campaign-performance insights across multiple markets.",
-    solution:
-      "Delivered Power BI dashboards, SQL models, CVI/CBI computations, MaxDiff, Van Westendorp, and key driver analysis.",
-    impact:
-      "Supported client-facing decision-making with 95%+ data accuracy targets and 15-20% pricing strategy precision improvements.",
-    stack: ["Power BI", "SQL", "Python", "DAX", "MaxDiff", "Van Westendorp"],
-  },
-];
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { caseStudies } from "@/app/lib/portfolio";
 
 function ArchitectureDiagram() {
   const nodes = [
@@ -142,32 +96,40 @@ export default function Projects() {
   return (
     <section id="projects" className="section-pad border-t border-white/10">
       <div className="container-max px-4 sm:px-6">
-        <div>
-          <div className="kicker">Featured projects</div>
-          <h2 className="section-title mt-5">Case studies, not just repository links.</h2>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <div className="kicker">Case studies</div>
+            <h2 className="section-title mt-5">Client work and projects, not just repository links.</h2>
+            <p className="subhead mt-5">
+              Each one says what the problem was, what I did and what changed. Open a case study for
+              the full story.
+            </p>
+          </div>
+
+          <Link href="/work" className="button-secondary w-full sm:w-auto">
+            All case studies
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
 
-        <div className="mt-12">
-          <ArchitectureDiagram />
-        </div>
-
-        <div className="mt-4 grid gap-4 lg:grid-cols-2">
-          {projects.map((project) => (
-            <article key={project.title} className="card p-6">
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          {caseStudies.map((item) => (
+            <article key={item.slug} className="card flex flex-col p-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <span className="tag">{project.label}</span>
-                  <h3 className="mt-5 text-2xl font-bold leading-tight text-white">
-                    {project.title}
-                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="tag">{item.label}</span>
+                    <span className="tag">{item.kind}</span>
+                  </div>
+                  <h3 className="mt-5 text-2xl font-bold leading-tight text-white">{item.title}</h3>
                 </div>
 
-                {project.href ? (
+                {item.href ? (
                   <a
-                    href={project.href}
+                    href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label={`View ${project.title}`}
+                    aria-label={`View ${item.title} on GitHub`}
                     className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/15 text-[var(--muted)] transition hover:border-[var(--teal)] hover:text-white"
                   >
                     <ArrowUpRight className="h-4 w-4" />
@@ -175,36 +137,30 @@ export default function Projects() {
                 ) : null}
               </div>
 
-              <div className="mt-7 grid gap-5">
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--rose)]">
-                    Problem
-                  </div>
-                  <p className="copy mt-2 text-sm">{project.problem}</p>
-                </div>
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--blue)]">
-                    Solution
-                  </div>
-                  <p className="copy mt-2 text-sm">{project.solution}</p>
-                </div>
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--teal)]">
-                    Impact
-                  </div>
-                  <p className="copy mt-2 text-sm">{project.impact}</p>
-                </div>
-              </div>
+              <p className="copy mt-5 text-sm">{item.summary}</p>
 
-              <div className="mt-7 flex flex-wrap gap-2">
-                {project.stack.map((item) => (
-                  <span key={item} className="tag">
-                    {item}
+              <div className="mt-5 text-xs font-bold uppercase tracking-[0.14em] text-[var(--teal)]">
+                What changed
+              </div>
+              <p className="mt-2 text-sm leading-7 text-[var(--muted-strong)]">{item.outcome[0]}</p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {item.stack.slice(0, 6).map((tool) => (
+                  <span key={tool} className="tag">
+                    {tool}
                   </span>
                 ))}
               </div>
+
+              <Link href={`/work#${item.slug}`} className="mt-auto pt-7 text-sm font-bold text-[var(--teal)] hover:text-white">
+                Read the case study
+              </Link>
             </article>
           ))}
+        </div>
+
+        <div className="mt-4">
+          <ArchitectureDiagram />
         </div>
       </div>
     </section>

@@ -5,6 +5,7 @@ import Experience from "./components/home_components/RelevantExperience";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Projects from "./components/home_components/Projects";
+import Resumes from "./components/home_components/Resumes";
 import Skills from "./components/home_components/Skills";
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
       <Articles />
       <Skills />
       <Experience />
+      <Resumes />
       <Footer />
     </main>
   );

@@ -1,0 +1,48 @@
+name: Monthly Recap
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  generate-recap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout feature/samuel_additions
+        uses: actions/checkout@v4
+        with:
+          ref: feature/samuel_additions
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate recap data
+        env:
+          RECAP_READ_TOKEN_ORG: ${{ secrets.RECAP_READ_TOKEN_ORG }}
+          RECAP_READ_TOKEN_TUTORIALS: ${{ secrets.RECAP_READ_TOKEN_TUTORIALS }}
+          GITHUB_USERNAME: ${{ vars.RECAP_USERNAME }}
+        run: python scripts/generate_recap.py
+
+      - name: Commit and push recap data if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/recap.json
+          if git diff --cached --quiet; then
+            echo "No changes to data/recap.json, skipping commit."
+            exit 0
+          fi
+          git commit -m "chore: monthly recap data update"
+          git push origin HEAD:feature/samuel_additions

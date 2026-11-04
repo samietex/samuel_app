@@ -37,9 +37,9 @@ export default function Footer() {
               Need someone who can build the data system and explain it clearly?
             </h2>
             <p className="copy mt-5 max-w-2xl text-base">
-              I am open to data engineering, data science, analytics, and
-              technical writing opportunities where reliable implementation and
-              clear communication both matter.
+              I&apos;m open to data analyst, data scientist and data engineer
+              roles where reliable data, sound statistics and clear
+              communication all matter.
             </p>
 
             <a
@@ -81,10 +81,12 @@ export default function Footer() {
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.14em] text-[var(--muted)] md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap gap-4">
             <Link href="/#work">Work</Link>
-            <Link href="/#projects">Projects</Link>
+            <Link href="/work">Case studies</Link>
             <Link href="/#articles">Writing</Link>
             <Link href="/#skills">Stack</Link>
             <Link href="/experience">Experience</Link>
+            <Link href="/#resume">Resumes</Link>
+            <Link href="/now">Now</Link>
           </div>
 
           <div>Copyright {new Date().getFullYear()} Samuel Shaibu</div>

@@ -4,12 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Download, FileText } from "lucide-react";
 
-const proofPoints = [
-  { value: "4+", label: "years in data roles" },
-  { value: "18+", label: "technical tutorials" },
-  { value: "40+", label: "students mentored" },
-  { value: "95%+", label: "accuracy focus in client insight delivery" },
-];
+import { headline, proofPoints } from "@/app/lib/portfolio";
 
 export default function Hero() {
   return (
@@ -17,31 +12,31 @@ export default function Hero() {
       <div className="container-max">
         <div className="grid min-h-[calc(100vh-9rem)] gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div>
-            <div className="kicker">Data Engineer | Data Scientist | Technical Writer</div>
+            <div className="kicker">{headline}</div>
 
             <h1 className="display-title mt-6 max-w-5xl">
-              Building data systems people can trust, use, and understand.
+              Turning raw data into decisions people can trust.
             </h1>
 
             <p className="subhead mt-7 max-w-3xl">
-              I build scalable data pipelines, extract actionable insights with
-              statistics and machine learning, and document complex systems so
-              technical and business teams can make better decisions.
+              I own data work end to end: the pipeline, the KPI, the statistical
+              test and the dashboard. Then I explain what it means, so technical
+              and business teams can act on it.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/#projects" className="button-primary">
-                View Projects
+              <Link href="/work" className="button-primary">
+                View Case Studies
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="/articles" className="button-secondary">
                 <FileText className="h-4 w-4" />
                 Read Articles
               </Link>
-              <a href="/Samuel_Shaibu_Resume.pdf" className="button-secondary">
+              <Link href="/#resume" className="button-secondary">
                 <Download className="h-4 w-4" />
-                Download Resume
-              </a>
+                Download a Resume
+              </Link>
             </div>
 
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -75,8 +70,8 @@ export default function Hero() {
                   Current focus
                 </div>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted-strong)]">
-                  Python, SQL, AWS ETL, Power BI, ML modeling, and data
-                  education.
+                  Data analysis, data science and data engineering: SQL, Python,
+                  Power BI, statistics, ML and AWS pipelines.
                 </p>
               </div>
               <div className="card-muted p-4">
@@ -84,8 +79,8 @@ export default function Hero() {
                   Based in
                 </div>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted-strong)]">
-                  Vilnius, Lithuania. Working across analytics, data platforms,
-                  and technical writing.
+                  Vilnius, Lithuania. Working across analytics, data science
+                  and data engineering.
                 </p>
               </div>
             </div>

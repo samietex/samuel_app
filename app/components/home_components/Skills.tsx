@@ -1,21 +1,4 @@
-const skillGroups = [
-  {
-    title: "Data Engineering",
-    items: ["Python", "SQL", "pandas", "AWS Glue", "S3", "Athena", "Step Functions", "EventBridge", "Terraform", "SSIS"],
-  },
-  {
-    title: "Data Science",
-    items: ["Scikit-learn", "Statistics", "Model evaluation", "Feature importance", "Experimentation", "Pricing models", "Responsible AI"],
-  },
-  {
-    title: "Analytics & BI",
-    items: ["Power BI", "DAX", "KPI design", "Data modeling", "CVI/CBI", "MaxDiff", "Van Westendorp", "Dashboard design"],
-  },
-  {
-    title: "Apps & Writing",
-    items: ["Streamlit", "LangChain", "OpenAI API", "Technical tutorials", "Documentation", "Model cards", "Data sheets", "Curriculum design"],
-  },
-];
+import { skillGroups } from "@/app/lib/portfolio";
 
 export default function Skills() {
   return (
@@ -26,8 +9,8 @@ export default function Skills() {
             <div className="kicker">Tech stack</div>
             <h2 className="section-title mt-5">Grouped by how the work gets done.</h2>
             <p className="subhead mt-5">
-              No percentage bars. The stack is organized by the job it performs:
-              pipelines, modeling, dashboards, applications, and writing.
+              No percentage bars. The stack is organised by the job it does: analysis,
+              statistics, modelling, pipelines and writing.
             </p>
           </div>
 

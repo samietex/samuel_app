@@ -41,8 +41,8 @@ export default function Navbar() {
                 <div className="truncate text-sm font-bold text-white sm:text-base">
                   Samuel Shaibu
                 </div>
-                <div className="hidden text-xs text-[var(--muted)] sm:block">
-                  Data Engineer | Data Scientist | Technical Writer
+                <div className="hidden whitespace-nowrap text-xs text-[var(--muted)] sm:block">
+                  Data Analyst | Data Scientist | Data Engineer
                 </div>
               </div>
             </Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)] transition hover:text-white"
+                  className="whitespace-nowrap text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--muted)] transition hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -60,14 +60,14 @@ export default function Navbar() {
             </nav>
 
             <div className="flex shrink-0 items-center gap-3 text-[var(--muted)]">
-              <a
-                href="/Samuel_Shaibu_Resume.pdf"
-                aria-label="Download resume"
+              <Link
+                href="/#resume"
+                aria-label="Download a resume"
                 className="hidden items-center gap-2 rounded-lg border border-white/15 px-3 py-2 text-xs font-bold text-white transition hover:border-[var(--teal)] hover:bg-white/5 sm:inline-flex"
               >
                 <Download className="h-4 w-4" />
-                Resume
-              </a>
+                Resumes
+              </Link>
 
               {socialLinks.map((item) => {
                 const Icon = item.icon;
