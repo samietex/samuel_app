@@ -1,0 +1,340 @@
+{
+  "generated_at": "2026-11-05T20:29:47Z",
+  "period": {
+    "since": "2026-10-06T20:29:47Z",
+    "until": "2026-11-05T20:29:47Z"
+  },
+  "writing": {
+    "substack": [],
+    "medium": []
+  },
+  "building": {
+    "repos_active": 8,
+    "total_commits": 39,
+    "commits_by_repo": {
+      "all-about-data-and-more/SQL_Tutorial": [
+        {
+          "sha": "7c061ce",
+          "branch": "assets",
+          "message": "Trim SQL Server's trailing 'statement terminated' note and padded temp table names from errors",
+          "date": "2026-10-30T08:13:10Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/7c061cef916c28f7d92265a9321129d4f423869e"
+        },
+        {
+          "sha": "13cd77c",
+          "branch": "assets",
+          "message": "Label T-SQL row counts honestly and roll back a transaction a failed cell left open",
+          "date": "2026-10-30T08:11:43Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/13cd77c90f56d381080a33baa737b24d19fcad27"
+        },
+        {
+          "sha": "ac84494",
+          "branch": "assets",
+          "message": "Install SQL Server 2025 where 2022 has no package, as on Colab's Ubuntu 24.04",
+          "date": "2026-10-28T15:03:16Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/ac84494b7bfc4c074b8b0b6dff178b5792404c00"
+        },
+        {
+          "sha": "952e15c",
+          "branch": "assets",
+          "message": "Add %setup_adventureworks, which installs SQL Server and AdventureWorks in Colab",
+          "date": "2026-10-28T14:55:02Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/952e15c8b51127d772e72ed007f57870a6f6a3f3"
+        },
+        {
+          "sha": "c410a2f",
+          "branch": "assets",
+          "message": "Add the sql_tutorial.py helper the notebooks download",
+          "date": "2026-10-28T13:18:26Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/c410a2f1316d36442fa610fbb8c68286d3c96625"
+        },
+        {
+          "sha": "8f55111",
+          "branch": "main",
+          "message": "Merge pull request #2 from samietex/add/resources-and-capstone",
+          "date": "2026-10-30T14:42:54Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/8f55111eb49d2e741b267e3c5f51496485886181"
+        },
+        {
+          "sha": "ba42bb4",
+          "branch": "main",
+          "message": "Remove three images no notebook uses any more",
+          "date": "2026-10-30T14:42:27Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/ba42bb464dd95624ede6db2aa053ba481eff8958"
+        },
+        {
+          "sha": "28e3136",
+          "branch": "main",
+          "message": "Add RESOURCES.md and link the capstone and resources from the readme, overview and interview prep",
+          "date": "2026-10-30T14:33:16Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/28e3136468e48de71d53de1b761bfcaf0285a95f"
+        },
+        {
+          "sha": "00e222c",
+          "branch": "main",
+          "message": "Add the capstone: an online store analysis on AdventureWorks, with solutions and a study guide",
+          "date": "2026-10-30T14:33:16Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/00e222c8bbd07be3fc97f6a3eca0bab99abc8547"
+        },
+        {
+          "sha": "28ac7bb",
+          "branch": "main",
+          "message": "Merge pull request #1 from samietex/revamp/lesson-aligned-notebooks",
+          "date": "2026-10-30T14:18:33Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/28ac7bb631cb161c7947b1cdd6a33a4047315341"
+        },
+        {
+          "sha": "5be27e1",
+          "branch": "main",
+          "message": "Link each notebook to its published lesson",
+          "date": "2026-10-30T14:15:13Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/5be27e19648327914a1fe3776d3caf7b39d91369"
+        },
+        {
+          "sha": "1b3f1ea",
+          "branch": "main",
+          "message": "Rewrite the study guides and interview prep against the new notebooks, adding guides for 01 and 09",
+          "date": "2026-10-30T08:31:52Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/1b3f1ea3ef7597d226ddea89de10ff77f7973bc3"
+        },
+        {
+          "sha": "fc4fd26",
+          "branch": "main",
+          "message": "Rewrite the readme for the Python-kernel notebooks",
+          "date": "2026-10-30T08:27:10Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/fc4fd2637a799230c13ed78f62bf6c5e5fe72b5f"
+        },
+        {
+          "sha": "f31a1f7",
+          "branch": "main",
+          "message": "Rewrite the Course Overview, readme and Appendix A for the Python-kernel notebooks",
+          "date": "2026-10-30T08:26:49Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/f31a1f73877f174738717c515551d5df9a5aaf95"
+        },
+        {
+          "sha": "b56aeae",
+          "branch": "main",
+          "message": "Add 09 - Thinking in Metrics, matching lesson 9",
+          "date": "2026-10-30T08:22:51Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/b56aeae75c5f7611d1c9642d1ec94cff9526f61b"
+        },
+        {
+          "sha": "c0ff323",
+          "branch": "main",
+          "message": "Rebuild 08b - Changing Data, Part 2 to match lesson 8's CREATE TABLE, constraints and ALTER TABLE",
+          "date": "2026-10-30T08:19:11Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/c0ff323656ec0b2ded8374020f82e8c2be53a8c2"
+        },
+        {
+          "sha": "30345f0",
+          "branch": "main",
+          "message": "Rebuild 08a - Changing Data, Part 1 to match lesson 8's INSERT, UPDATE and DELETE",
+          "date": "2026-10-30T08:16:03Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/30345f07c1069392ad11bd616f42217ae669a1ad"
+        },
+        {
+          "sha": "543fd9f",
+          "branch": "main",
+          "message": "Re-run the 06 solutions notebook",
+          "date": "2026-10-30T08:09:58Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/543fd9fb2ddab481fde47f8fa8cf4f34c22e4814"
+        },
+        {
+          "sha": "e6923a9",
+          "branch": "main",
+          "message": "Rebuild 07 - Window Functions, Part 2 to match the depth of lesson 7",
+          "date": "2026-10-30T08:09:47Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/e6923a979c2a1be189561aa75de5eb3eb5973c5e"
+        },
+        {
+          "sha": "98750e4",
+          "branch": "main",
+          "message": "Show order shares in 06 with two decimal places",
+          "date": "2026-10-30T08:05:49Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/98750e4b3d70a0951f2e420666348624800031a1"
+        },
+        {
+          "sha": "c32d6a6",
+          "branch": "main",
+          "message": "Rebuild 06 - Window Functions, Part 1 to match the depth of lesson 6",
+          "date": "2026-10-30T08:05:22Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/c32d6a62e37d47e5d38fdad4aad6ca85fe9002d2"
+        },
+        {
+          "sha": "16f56a9",
+          "branch": "main",
+          "message": "Rebuild 05 - Subqueries to CTEs to match the depth of lesson 5",
+          "date": "2026-10-30T08:01:35Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/16f56a984ed6ef7d85e5be8d3c3421943dbd6af8"
+        },
+        {
+          "sha": "d16c2df",
+          "branch": "main",
+          "message": "Rebuild 03 - Aggregation to match the depth of lesson 3",
+          "date": "2026-10-30T07:57:22Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/d16c2df4971fffa4a9624e12311d0901194bebb0"
+        },
+        {
+          "sha": "33de490",
+          "branch": "main",
+          "message": "Rebuild 02 - SQL Basics to match the depth of lesson 2",
+          "date": "2026-10-30T07:51:04Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/33de4908948fc74bb68d655c770bb74948dc1003"
+        },
+        {
+          "sha": "f00b943",
+          "branch": "main",
+          "message": "Add 01 - What Is a Database, matching lesson 1",
+          "date": "2026-10-30T07:46:57Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/f00b943d5d273adb63b044bcf3aa16e1355a44ea"
+        },
+        {
+          "sha": "2d3974e",
+          "branch": "main",
+          "message": "Fetch a fresh copy of the helper every time the setup cell runs",
+          "date": "2026-10-28T14:59:19Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/2d3974e53f15099d5241af4b3ec1ef4e36d000ac"
+        },
+        {
+          "sha": "0850cbc",
+          "branch": "main",
+          "message": "Give the AdventureWorks section a one-cell setup that works in Colab",
+          "date": "2026-10-28T14:55:05Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/0850cbc96956f5b8b1543a9a8633fb180759c2a1"
+        },
+        {
+          "sha": "79982e8",
+          "branch": "main",
+          "message": "Rebuild 04 - JOINs to match the depth of the lesson 4 article",
+          "date": "2026-10-28T13:18:16Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/79982e84668542aacfdd1786598679aa17cfe70e"
+        },
+        {
+          "sha": "0cc561a",
+          "branch": "main",
+          "message": "Renumber notebooks to match lesson numbers and tidy the repo root",
+          "date": "2026-10-28T13:18:16Z",
+          "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/commit/0cc561aff3930c35a65e1ded2338c2bb8d0a8fc5"
+        }
+      ],
+      "all-about-data-and-more/energy-analytics-platform": [
+        {
+          "sha": "4771639",
+          "branch": "main",
+          "message": "Merge pull request #3 from all-about-data-and-more/stg",
+          "date": "2026-11-05T19:46:23Z",
+          "url": "https://github.com/all-about-data-and-more/energy-analytics-platform/commit/47716396f09e28d678df6972f90ac85547ca532a"
+        },
+        {
+          "sha": "908e58e",
+          "branch": "main",
+          "message": "small changes",
+          "date": "2026-11-05T19:24:41Z",
+          "url": "https://github.com/all-about-data-and-more/energy-analytics-platform/commit/908e58e3422b3b27a000393c652f4264c5b324d4"
+        }
+      ],
+      "all-about-data-and-more/retail-customer-intelligence": [
+        {
+          "sha": "5f65f89",
+          "branch": "main",
+          "message": "Merge pull request #2 from all-about-data-and-more/stg",
+          "date": "2026-11-05T19:40:04Z",
+          "url": "https://github.com/all-about-data-and-more/retail-customer-intelligence/commit/5f65f89f7431a075a89011e9cdde3cc13a9d0930"
+        },
+        {
+          "sha": "f055946",
+          "branch": "main",
+          "message": "small changes",
+          "date": "2026-11-05T19:25:46Z",
+          "url": "https://github.com/all-about-data-and-more/retail-customer-intelligence/commit/f055946d3403c1ae22effa557dbd1ed08a323955"
+        }
+      ],
+      "all-about-data-and-more/shared-databricks-utils": [
+        {
+          "sha": "3695462",
+          "branch": "main",
+          "message": "small changes",
+          "date": "2026-11-05T19:26:14Z",
+          "url": "https://github.com/all-about-data-and-more/shared-databricks-utils/commit/3695462c08f8ad96fc052d75a6ac4a2d738b8454"
+        }
+      ],
+      "all-about-data-and-more/lakebase-support-app": [
+        {
+          "sha": "63d4712",
+          "branch": "main",
+          "message": "small changes",
+          "date": "2026-11-05T19:25:16Z",
+          "url": "https://github.com/all-about-data-and-more/lakebase-support-app/commit/63d471246f061c627e1de71fdd6829831fdfed43"
+        }
+      ],
+      "all-about-data-and-more/ai-trip-and-outdoor-activity-planner": [
+        {
+          "sha": "fc3c4bf",
+          "branch": "main",
+          "message": "small changes",
+          "date": "2026-11-05T19:22:00Z",
+          "url": "https://github.com/all-about-data-and-more/ai-trip-and-outdoor-activity-planner/commit/fc3c4bf72f8a8de5a6d60e01a43db74072020085"
+        }
+      ],
+      "all-about-data-and-more/databricks-bundle-template": [
+        {
+          "sha": "288a1e9",
+          "branch": "stg",
+          "message": "small changes",
+          "date": "2026-11-05T19:24:14Z",
+          "url": "https://github.com/all-about-data-and-more/databricks-bundle-template/commit/288a1e9270f4212702b32e15196fdb5c4431d696"
+        }
+      ],
+      "all-about-data-and-more/.github": [
+        {
+          "sha": "f439d7f",
+          "branch": "main",
+          "message": "Create README.md for All About Data & More",
+          "date": "2026-11-05T20:06:08Z",
+          "url": "https://github.com/all-about-data-and-more/.github/commit/f439d7fce100e93ecb82f516e7901d768a95603e"
+        },
+        {
+          "sha": "d87cab6",
+          "branch": "main",
+          "message": "Initial commit",
+          "date": "2026-11-05T20:04:41Z",
+          "url": "https://github.com/all-about-data-and-more/.github/commit/d87cab64927a9352e10d32ee5521098f6a7f5694"
+        }
+      ]
+    },
+    "prs_opened": [
+      {
+        "repo": "all-about-data-and-more/energy-analytics-platform",
+        "number": 3,
+        "title": "Stg",
+        "state": "closed",
+        "url": "https://github.com/all-about-data-and-more/energy-analytics-platform/pull/3",
+        "created_at": "2026-11-05T19:46:11Z"
+      },
+      {
+        "repo": "all-about-data-and-more/retail-customer-intelligence",
+        "number": 2,
+        "title": "small changes",
+        "state": "closed",
+        "url": "https://github.com/all-about-data-and-more/retail-customer-intelligence/pull/2",
+        "created_at": "2026-11-05T19:26:43Z"
+      },
+      {
+        "repo": "all-about-data-and-more/SQL_Tutorial",
+        "number": 2,
+        "title": "Add/resources and capstone",
+        "state": "closed",
+        "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/pull/2",
+        "created_at": "2026-10-30T14:42:44Z"
+      },
+      {
+        "repo": "all-about-data-and-more/SQL_Tutorial",
+        "number": 1,
+        "title": "Revamp/lesson aligned notebooks",
+        "state": "closed",
+        "url": "https://github.com/all-about-data-and-more/SQL_Tutorial/pull/1",
+        "created_at": "2026-10-30T14:18:11Z"
+      }
+    ]
+  }
+}

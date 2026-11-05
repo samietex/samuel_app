@@ -41,6 +41,10 @@ ORG = "all-about-data-and-more"
 
 SUBSTACK_FEED_URL = "https://aaboutdata.substack.com/feed"
 MEDIUM_FEED_URL = "https://medium.com/feed/@Samietex"
+FEED_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/130.0 Safari/537.36"
+)
 
 SINCE = (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%dT%H:%M:%SZ")
 UNTIL = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -63,9 +67,11 @@ def paginate(url, headers, params=None):
 
 
 def get_org_repos():
-    """Return every repo in the org, discovered rather than hardcoded."""
+    """Return every repo in the org, discovered rather than hardcoded. Skips the .github
+    profile repo, which holds the org README rather than a project."""
     url = f"https://api.github.com/orgs/{ORG}/repos"
-    return [repo["full_name"] for repo in paginate(url, HEADERS_ORG, {"type": "all"})]
+    repos = paginate(url, HEADERS_ORG, {"type": "all"})
+    return [repo["full_name"] for repo in repos if repo["name"] != ".github"]
 
 
 def get_branches(repo_full_name, headers):
@@ -131,7 +137,13 @@ def get_prs_opened(headers, repos):
 
 def get_feed_posts(feed_url):
     """Return title/link/published for RSS entries published in the last 30 days."""
-    parsed = feedparser.parse(feed_url)
+    # Fetch with a browser-like User-Agent: feed hosts can block default clients on CI runners,
+    # and feedparser hides HTTP errors, so log the status to make a block visible.
+    resp = requests.get(feed_url, headers={"User-Agent": FEED_USER_AGENT}, timeout=30)
+    print(f"{feed_url}: HTTP {resp.status_code}", file=sys.stderr)
+    if not resp.ok:
+        return []
+    parsed = feedparser.parse(resp.content)
     posts = []
     for entry in parsed.entries:
         published = entry.get("published_parsed") or entry.get("updated_parsed")
@@ -145,6 +157,7 @@ def get_feed_posts(feed_url):
             "link": entry.get("link", ""),
             "published": published_at,
         })
+    print(f"{feed_url}: {len(parsed.entries)} entries, {len(posts)} in the last 30 days", file=sys.stderr)
     return posts
 
 
