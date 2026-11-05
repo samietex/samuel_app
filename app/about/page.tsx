@@ -22,7 +22,7 @@ export default function AboutPage() {
               <div>
                 <div className="card overflow-hidden">
                   <Image
-                    src="/samuel_pic3.jpg"
+                    src="/samuel_portrait.jpg"
                     alt="Samuel Shaibu portrait"
                     width={420}
                     height={540}

@@ -55,7 +55,7 @@ export default function Hero() {
             <div className="card overflow-hidden">
               <div className="relative aspect-[4/5] w-full">
                 <Image
-                  src="/samuel_pic.jpg"
+                  src="/samuel_portrait.jpg"
                   alt="Samuel Shaibu"
                   fill
                   className="object-cover"
