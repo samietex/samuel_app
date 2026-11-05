@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-05T20:29:47Z",
+  "generated_at": "2026-11-05T20:32:02Z",
   "period": {
-    "since": "2026-10-06T20:29:47Z",
-    "until": "2026-11-05T20:29:47Z"
+    "since": "2026-10-06T20:32:02Z",
+    "until": "2026-11-05T20:32:02Z"
   },
   "writing": {
     "substack": [],
     "medium": []
   },
   "building": {
-    "repos_active": 8,
-    "total_commits": 39,
+    "repos_active": 7,
+    "total_commits": 37,
     "commits_by_repo": {
       "all-about-data-and-more/SQL_Tutorial": [
         {
@@ -283,22 +283,6 @@
           "message": "small changes",
           "date": "2026-11-05T19:24:14Z",
           "url": "https://github.com/all-about-data-and-more/databricks-bundle-template/commit/288a1e9270f4212702b32e15196fdb5c4431d696"
-        }
-      ],
-      "all-about-data-and-more/.github": [
-        {
-          "sha": "f439d7f",
-          "branch": "main",
-          "message": "Create README.md for All About Data & More",
-          "date": "2026-11-05T20:06:08Z",
-          "url": "https://github.com/all-about-data-and-more/.github/commit/f439d7fce100e93ecb82f516e7901d768a95603e"
-        },
-        {
-          "sha": "d87cab6",
-          "branch": "main",
-          "message": "Initial commit",
-          "date": "2026-11-05T20:04:41Z",
-          "url": "https://github.com/all-about-data-and-more/.github/commit/d87cab64927a9352e10d32ee5521098f6a7f5694"
         }
       ]
     },
