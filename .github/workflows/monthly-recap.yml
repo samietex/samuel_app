@@ -31,7 +31,6 @@ jobs:
       - name: Generate recap data
         env:
           RECAP_READ_TOKEN_ORG: ${{ secrets.RECAP_READ_TOKEN_ORG }}
-          RECAP_READ_TOKEN_TUTORIALS: ${{ secrets.RECAP_READ_TOKEN_TUTORIALS }}
           GITHUB_USERNAME: ${{ vars.RECAP_USERNAME }}
         run: python scripts/generate_recap.py
 

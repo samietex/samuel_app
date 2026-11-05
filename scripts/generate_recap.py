@@ -1,12 +1,11 @@
 """
 Builds a rolling 30-day "what I've been up to" recap: GitHub commits/PRs
-(scoped to the all-about-data-and-more org repos plus a few personal
-tutorial repos) and writing activity from the Substack and Medium RSS feeds.
+(scoped to the all-about-data-and-more org repos, which include the
+tutorials) and writing activity from the Substack and Medium RSS feeds.
 
-Uses two GitHub tokens because fine-grained PATs are scoped to a single
-resource owner: RECAP_READ_TOKEN_ORG for the all-about-data-and-more org,
-RECAP_READ_TOKEN_TUTORIALS for the personal tutorial repos. Also requires
-GITHUB_USERNAME. All three can be set in a .env file for local runs.
+Requires RECAP_READ_TOKEN_ORG, a fine-grained PAT for the
+all-about-data-and-more org, and GITHUB_USERNAME. Both can be set in a .env
+file for local runs.
 """
 
 import json
@@ -22,14 +21,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN_ORG = os.getenv("RECAP_READ_TOKEN_ORG")
-TOKEN_TUTORIALS = os.getenv("RECAP_READ_TOKEN_TUTORIALS")
 USERNAME = os.getenv("GITHUB_USERNAME")
 
-if not TOKEN_ORG or not TOKEN_TUTORIALS or not USERNAME:
-    sys.exit(
-        "Error: RECAP_READ_TOKEN_ORG, RECAP_READ_TOKEN_TUTORIALS, and "
-        "GITHUB_USERNAME must be set in .env"
-    )
+if not TOKEN_ORG or not USERNAME:
+    sys.exit("Error: RECAP_READ_TOKEN_ORG and GITHUB_USERNAME must be set in .env")
 
 
 def _auth_headers(token):
@@ -41,10 +36,8 @@ def _auth_headers(token):
 
 
 HEADERS_ORG = _auth_headers(TOKEN_ORG)
-HEADERS_TUTORIALS = _auth_headers(TOKEN_TUTORIALS)
 
 ORG = "all-about-data-and-more"
-PERSONAL_REPOS = ["Python_Tutorial", "SQL_Tutorial", "Streamlit_Tutorial"]
 
 SUBSTACK_FEED_URL = "https://aaboutdata.substack.com/feed"
 MEDIUM_FEED_URL = "https://medium.com/feed/@Samietex"
@@ -159,19 +152,14 @@ def main():
     print(f"Building recap for {USERNAME} since {SINCE} ...", file=sys.stderr)
 
     org_repos = get_org_repos()
-    tutorial_repos = [f"{USERNAME}/{name}" for name in PERSONAL_REPOS]
 
     commits_by_repo = {}
     for repo_name in org_repos:
         commits = get_commits_for_repo(repo_name, HEADERS_ORG)
         if commits:
             commits_by_repo[repo_name] = commits
-    for repo_name in tutorial_repos:
-        commits = get_commits_for_repo(repo_name, HEADERS_TUTORIALS)
-        if commits:
-            commits_by_repo[repo_name] = commits
 
-    prs_opened = get_prs_opened(HEADERS_ORG, org_repos) + get_prs_opened(HEADERS_TUTORIALS, tutorial_repos)
+    prs_opened = get_prs_opened(HEADERS_ORG, org_repos)
 
     substack_posts = get_feed_posts(SUBSTACK_FEED_URL)
     medium_posts = get_feed_posts(MEDIUM_FEED_URL)

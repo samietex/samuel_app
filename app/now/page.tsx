@@ -3,8 +3,8 @@ import Footer from "@/app/components/Footer";
 import { getRecap } from "@/app/lib/recap";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 
-// The org was renamed from modern-data-engineering-lab; older recaps still use that name.
-const PROJECT_ORGS = ["all-about-data-and-more", "modern-data-engineering-lab"];
+// Tutorials moved from samietex into the all-about-data-and-more org, so label by repo name.
+const TUTORIAL_REPOS = ["Python_Tutorial", "SQL_Tutorial", "Streamlit_Tutorial"];
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -15,8 +15,8 @@ function formatDate(iso: string) {
 }
 
 function repoLabel(repo: string) {
-  const [owner] = repo.split("/");
-  return PROJECT_ORGS.includes(owner) ? "Project" : "Tutorial";
+  const [, name] = repo.split("/");
+  return TUTORIAL_REPOS.includes(name) ? "Tutorial" : "Project";
 }
 
 function buildSummaryLine(totalCommits: number, deLabCount: number, tutorialCount: number) {
