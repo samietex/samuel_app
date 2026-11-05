@@ -1,10 +1,10 @@
 """
 Builds a rolling 30-day "what I've been up to" recap: GitHub commits/PRs
-(scoped to the modern-data-engineering-lab org repos plus a few personal
+(scoped to the all-about-data-and-more org repos plus a few personal
 tutorial repos) and writing activity from the Substack and Medium RSS feeds.
 
 Uses two GitHub tokens because fine-grained PATs are scoped to a single
-resource owner: RECAP_READ_TOKEN_ORG for the modern-data-engineering-lab org,
+resource owner: RECAP_READ_TOKEN_ORG for the all-about-data-and-more org,
 RECAP_READ_TOKEN_TUTORIALS for the personal tutorial repos. Also requires
 GITHUB_USERNAME. All three can be set in a .env file for local runs.
 """
@@ -43,7 +43,7 @@ def _auth_headers(token):
 HEADERS_ORG = _auth_headers(TOKEN_ORG)
 HEADERS_TUTORIALS = _auth_headers(TOKEN_TUTORIALS)
 
-ORG = "modern-data-engineering-lab"
+ORG = "all-about-data-and-more"
 PERSONAL_REPOS = ["Python_Tutorial", "SQL_Tutorial", "Streamlit_Tutorial"]
 
 SUBSTACK_FEED_URL = "https://aaboutdata.substack.com/feed"

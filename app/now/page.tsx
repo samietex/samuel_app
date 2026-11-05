@@ -3,7 +3,8 @@ import Footer from "@/app/components/Footer";
 import { getRecap } from "@/app/lib/recap";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 
-const DE_LAB_ORG = "modern-data-engineering-lab";
+// The org was renamed from modern-data-engineering-lab; older recaps still use that name.
+const PROJECT_ORGS = ["all-about-data-and-more", "modern-data-engineering-lab"];
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -15,13 +16,13 @@ function formatDate(iso: string) {
 
 function repoLabel(repo: string) {
   const [owner] = repo.split("/");
-  return owner === DE_LAB_ORG ? "DE Lab" : "Tutorial";
+  return PROJECT_ORGS.includes(owner) ? "Project" : "Tutorial";
 }
 
 function buildSummaryLine(totalCommits: number, deLabCount: number, tutorialCount: number) {
   const parts: string[] = [];
   if (deLabCount > 0) {
-    parts.push(`${deLabCount} DE Lab project${deLabCount === 1 ? "" : "s"}`);
+    parts.push(`${deLabCount} project${deLabCount === 1 ? "" : "s"}`);
   }
   if (tutorialCount > 0) {
     parts.push(`${tutorialCount} tutorial repo${tutorialCount === 1 ? "" : "s"}`);
@@ -58,7 +59,7 @@ export default function NowPage() {
     }))
     .sort((a, b) => b.count - a.count);
 
-  const deLabCount = repoEntries.filter((entry) => entry.label === "DE Lab").length;
+  const deLabCount = repoEntries.filter((entry) => entry.label === "Project").length;
   const tutorialCount = repoEntries.length - deLabCount;
   const totalCommits = recap?.building.total_commits ?? 0;
 
@@ -190,7 +191,7 @@ export default function NowPage() {
               <div className="card-muted mt-8 p-6">
                 <p className="text-sm leading-6 text-[var(--muted-strong)]">
                   {recap
-                    ? "No commits across DE Lab or tutorial repos in the last 30 days."
+                    ? "No commits across project or tutorial repos in the last 30 days."
                     : "Recap data is not available yet. Check back soon."}
                 </p>
               </div>

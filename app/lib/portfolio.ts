@@ -251,7 +251,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     learned: "The lower number is the one that answers the real question.",
     stack: ["Python", "PySpark", "AWS Glue", "Athena", "Step Functions", "XGBoost", "Terraform"],
-    href: "https://github.com/modern-data-engineering-lab/energy-analytics-platform",
+    href: "https://github.com/all-about-data-and-more/energy-analytics-platform",
   },
   {
     slug: "retail-customer-intelligence",
@@ -271,7 +271,7 @@ export const caseStudies: CaseStudy[] = [
       "A test that flags the 303 orders whose payments don't match.",
     ],
     stack: ["dbt", "Databricks", "SQL", "Unity Catalog", "Delta Lake", "GitHub Actions"],
-    href: "https://github.com/modern-data-engineering-lab/retail-customer-intelligence",
+    href: "https://github.com/all-about-data-and-more/retail-customer-intelligence",
   },
   {
     slug: "ai-ethics-budget",
@@ -306,7 +306,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     outcome: ["Plans that adapt to weather and air quality, and an app that always answers."],
     stack: ["Databricks", "Lakebase", "PostgreSQL", "pgvector", "LLM", "MCP", "Python"],
-    href: "https://github.com/modern-data-engineering-lab",
+    href: "https://github.com/all-about-data-and-more",
   },
 ];
 
